@@ -4,7 +4,7 @@ import com.goodow.realtime.android.AndroidPlatform;
 import com.goodow.realtime.channel.Bus;
 import com.goodow.realtime.java.JavaWebSocket;
 import com.goodow.realtime.store.Store;
-import com.goodow.realtime.store.impl.DefaultStore;
+import com.goodow.realtime.store.impl.StoreImpl;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
@@ -35,6 +35,7 @@ public class DriveAndroidModule extends AbstractModule {
   @Provides
   @Singleton
   Store provideStore() {
-    return new DefaultStore("ws://" + SERVER + "/channel/websocket", null).authorize("", "");
+      return new StoreImpl(URL, Json.createObject().set(WebSocketBus.SESSION, DeviceInformationTools
+              .getLocalMacAddressFromWifiInfo(contextProvider.get())));
   }
 }
