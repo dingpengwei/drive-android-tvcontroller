@@ -10,7 +10,6 @@ import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationSet;
 import android.widget.*;
-import com.goodow.android.drive.tvcontroller.R;
 import com.goodow.realtime.channel.Bus;
 import com.goodow.realtime.json.Json;
 import com.goodow.realtime.json.JsonObject;
