@@ -1,12 +1,17 @@
 package com.goodow.android.drive.tvcontroller;
 
+import android.content.Context;
 import com.goodow.realtime.android.AndroidPlatform;
 import com.goodow.realtime.channel.Bus;
+import com.goodow.realtime.channel.impl.ReconnectBus;
+import com.goodow.realtime.channel.impl.WebSocketBus;
 import com.goodow.realtime.java.JavaWebSocket;
+import com.goodow.realtime.json.Json;
 import com.goodow.realtime.store.Store;
 import com.goodow.realtime.store.impl.StoreImpl;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provider;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 
@@ -14,7 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DriveAndroidModule extends AbstractModule {
-  private static final String SERVER = "54.186.216.246:1986";
+    private static final String SERVER = "ldh.goodow.com:1986";
+    private static final String URL = "ws://" + SERVER + "/channel/websocket";
 
   static {
     AndroidPlatform.register();
@@ -34,7 +40,7 @@ public class DriveAndroidModule extends AbstractModule {
 
   @Provides
   @Singleton
-  Store provideStore() {
+  Store provideStore(Provider<Context> contextProvider) {
       return new StoreImpl(URL, Json.createObject().set(WebSocketBus.SESSION, DeviceInformationTools
               .getLocalMacAddressFromWifiInfo(contextProvider.get())));
   }
