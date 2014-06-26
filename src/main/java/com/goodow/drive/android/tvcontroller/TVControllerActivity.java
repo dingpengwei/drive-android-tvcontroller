@@ -1,10 +1,4 @@
-package com.goodow.android.drive.tvcontroller;
-
-import com.goodow.realtime.channel.Bus;
-import com.goodow.realtime.json.Json;
-import com.goodow.realtime.json.JsonObject;
-
-import com.google.inject.Inject;
+package com.goodow.drive.android.tvcontroller;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -15,11 +9,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.AnimationSet;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
+import android.widget.*;
+import com.goodow.android.drive.tvcontroller.R;
+import com.goodow.realtime.channel.Bus;
+import com.goodow.realtime.json.Json;
+import com.goodow.realtime.json.JsonObject;
+import com.google.inject.Inject;
 import roboguice.activity.RoboActivity;
 import roboguice.inject.InjectView;
 

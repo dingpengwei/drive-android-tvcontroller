@@ -1,4 +1,4 @@
-package com.goodow.android.drive.tvcontroller;
+package com.goodow.drive.android.tvcontroller;
 
 import android.app.Activity;
 import android.content.Context;

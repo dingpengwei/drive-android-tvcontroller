@@ -1,15 +1,13 @@
-package com.goodow.android.drive.tvcontroller;
+package com.goodow.drive.android.tvcontroller;
 
 import android.content.Context;
 import com.goodow.realtime.android.AndroidPlatform;
 import com.goodow.realtime.channel.Bus;
-import com.goodow.realtime.channel.impl.ReconnectBus;
 import com.goodow.realtime.channel.impl.WebSocketBus;
 import com.goodow.realtime.java.JavaWebSocket;
 import com.goodow.realtime.json.Json;
 import com.goodow.realtime.store.Store;
 import com.goodow.realtime.store.impl.StoreImpl;
-
 import com.google.inject.AbstractModule;
 import com.google.inject.Provider;
 import com.google.inject.Provides;

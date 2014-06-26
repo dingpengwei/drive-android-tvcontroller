@@ -1,5 +1,6 @@
 package com.goodow.android.drive.tvcontroller;
 
+import com.goodow.drive.android.tvcontroller.DeviceInformationTools;
 import com.goodow.realtime.channel.Bus;
 import com.goodow.realtime.json.Json;
 import com.goodow.realtime.json.JsonObject;
