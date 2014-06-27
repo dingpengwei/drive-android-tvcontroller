@@ -257,24 +257,36 @@ public class TVControllerActivity extends RoboActivity implements OnClickListene
 
   @Inject
   Bus bus;
-  @InjectView(R.id.act_tvcontroller_container)
+//  @InjectView(R.id.act_tvcontroller_container)
   private RelativeLayout act_tvcontroller_container = null;
-  @InjectView(R.id.ll_title)
+//  @InjectView(R.id.ll_title)
   private LinearLayout ll_title = null;
-  @InjectView(R.id.iv_mode_controller)
+//  @InjectView(R.id.iv_mode_controller)
   private ImageView iv_mode_controller = null;
-  @InjectView(R.id.ll_bottom)
+//  @InjectView(R.id.ll_bottom)
   private LinearLayout ll_bottom = null;
-  @InjectView(R.id.iv_bottom_home)
+//  @InjectView(R.id.iv_bottom_home)
   private ImageView iv_bottom_home = null;
-  @InjectView(R.id.iv_bottom_back)
+//  @InjectView(R.id.iv_bottom_back)
   private ImageView iv_bottom_back = null;
-  @InjectView(R.id.iv_bottom_menu)
+//  @InjectView(R.id.iv_bottom_menu)
   private ImageView iv_bottom_menu = null;
-  @InjectView(R.id.rl_tv_controller_container)
+//  @InjectView(R.id.rl_tv_controller_container)
   private RelativeLayout rl_tv_controller_container = null;
-  @InjectView(R.id.et_address)
+//  @InjectView(R.id.et_address)
   private EditText et_address = null;
+
+  private void initView(){
+    act_tvcontroller_container= (RelativeLayout) findViewById(R.id.act_tvcontroller_container);
+    ll_title= (LinearLayout) findViewById(R.id.ll_title);
+    iv_mode_controller= (ImageView) findViewById(R.id.iv_mode_controller);
+    ll_bottom= (LinearLayout) findViewById(R.id.ll_bottom);
+    iv_bottom_home = (ImageView) findViewById(R.id.iv_bottom_home);
+    iv_bottom_back = (ImageView) findViewById(R.id.iv_bottom_back);
+    iv_bottom_menu = (ImageView) findViewById(R.id.iv_bottom_menu);
+    rl_tv_controller_container = (RelativeLayout) findViewById(R.id.rl_tv_controller_container);
+    et_address = (EditText) findViewById(R.id.et_address);
+  }
   private static String sid = null;
   private final static String address_input = ".drive.input";
   private final static String address_view = ".drive.view";
@@ -288,24 +300,16 @@ public class TVControllerActivity extends RoboActivity implements OnClickListene
 
   @Override
   public void onClick(View v) {
-    switch (v.getId()) {
-      case R.id.iv_bottom_home:
-        sid = this.et_address.getText().toString();
-        if (sid == null) {
-          Toast.makeText(this, sid + address_input, Toast.LENGTH_SHORT).show();
-        }
-        this.bus.send(sid + address_view, Json.createObject().set("redirectTo", "home"), null);
-
-        break;
-      case R.id.iv_bottom_back:
-        this.onSendKeyAction(KeyEvent.KEYCODE_BACK);
-        break;
-      case R.id.iv_bottom_menu:
-        this.onSendKeyAction(KeyEvent.KEYCODE_MENU);
-        break;
-
-      default:
-        break;
+    if (v.getId()==R.id.iv_bottom_home){
+      sid = this.et_address.getText().toString();
+      if (sid == null) {
+        Toast.makeText(this, sid + address_input, Toast.LENGTH_SHORT).show();
+      }
+      this.bus.send(sid + address_view, Json.createObject().set("redirectTo", "home"), null);
+    }else if (v.getId()==R.id.iv_bottom_back){
+      this.onSendKeyAction(KeyEvent.KEYCODE_BACK);
+    }else if (v.getId()==R.id.iv_bottom_menu){
+      this.onSendKeyAction(KeyEvent.KEYCODE_MENU);
     }
   }
 
@@ -313,6 +317,7 @@ public class TVControllerActivity extends RoboActivity implements OnClickListene
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     this.setContentView(R.layout.activity_tvcontroller);
+    initView();
     this.SCREEN_WIDTH = DeviceInformationTools.getScreenWidth(this);
     this.SCREEN_HEIGHT = DeviceInformationTools.getScreenHeight(this);
     this.iv_mode_controller.setOnClickListener(new OnModeControllerClickListener());

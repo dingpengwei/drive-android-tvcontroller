@@ -10,7 +10,7 @@
     <groupId>com.goodow.drive.android</groupId>
     <artifactId>drive-android-tvcontroller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>apk</packaging>
+    <packaging>aar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -84,7 +84,6 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <finalName>${project.artifactId}-${maven.build.timestamp}</finalName>
         <plugins>
@@ -94,6 +93,7 @@
                 <version>3.8.2</version>
                 <extensions>true</extensions>
                 <configuration>
+                  <attachSources>true</attachSources>
                     <sdk>
                         <platform>19</platform>
                     </sdk>
