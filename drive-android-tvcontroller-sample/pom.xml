@@ -8,20 +8,15 @@
         <version>0.5.5-SNAPSHOT</version>
     </parent>
     <groupId>com.goodow.drive.android</groupId>
-    <artifactId>drive-android-tvcontroller-parent</artifactId>
+    <artifactId>drive-android-tvcontroller-sample</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <packaging>apk</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
     </properties>
-
-    <modules>
-        <module>drive-android-tvcontroller</module>
-        <module>drive-android-tvcontroller-sample</module>
-    </modules>
 
     <repositories>
         <repository>
@@ -56,6 +51,12 @@
             <groupId>com.google.android</groupId>
             <artifactId>support-v4</artifactId>
             <version>r7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.goodow.drive.android</groupId>
+            <artifactId>drive-android-tvcontroller</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+            <type>apklib</type>
         </dependency>
     </dependencies>
 
