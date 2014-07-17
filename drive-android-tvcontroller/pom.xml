@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.goodow.realtime</groupId>
-        <artifactId>realtime-parent</artifactId>
-        <version>0.5.5-SNAPSHOT</version>
+        <groupId>com.goodow.drive</groupId>
+        <artifactId>drive-android-tvcontroller-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.goodow.drive.android</groupId>
+    <groupId>com.goodow.drive</groupId>
     <artifactId>drive-android-tvcontroller</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>apklib</packaging>
@@ -91,6 +91,7 @@
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
                 <artifactId>android-maven-plugin</artifactId>
                 <extensions>true</extensions>
+                <version>3.9.0-rc.2</version>
                 <configuration>
                   <attachSources>true</attachSources>
                     <sdk>
